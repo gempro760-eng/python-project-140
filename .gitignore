@@ -1,0 +1,17 @@
+# Python / Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entorno virtual y empaquetado
+.venv/
+dist/
+build/
+*.egg-info/
+
+# Herramientas y Linter
+.ruff_cache/
+.pytest_cache/
+
+# Grabaciones locales
+*.cast
