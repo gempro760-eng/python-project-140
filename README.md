@@ -1,2 +1,4 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/gempro760-eng/python-project-140/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/gempro760-eng/python-project-140/actions)
+[![Quality gate status](https://sonarcloud.io/api/project_badges/measure?project=gempro760-eng_python-project-140&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=gempro760-eng_python-project-140)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=gempro760-eng_python-project-140&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=gempro760-eng_python-project-140)
