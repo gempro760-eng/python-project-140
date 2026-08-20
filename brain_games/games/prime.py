@@ -2,11 +2,20 @@ import random
 
 import prompt
 
+ROUNDS_COUNT = 3
+MIN_NUMBER = 1
+MAX_NUMBER = 100
+MIN_DIVISOR = 2
+SQUARE_ROOT_RANGE_OFFSET = 1
+
 
 def is_prime(number):
-    if number < 2:
+    if number < MIN_DIVISOR:
         return False
-    for i in range(2, int(number**0.5) + 1):
+    for i in range(
+        MIN_DIVISOR,
+        int(number**0.5) + SQUARE_ROOT_RANGE_OFFSET,
+    ):
         if number % i == 0:
             return False
     return True
@@ -18,10 +27,8 @@ def play_prime():
     print(f"Hello, {name}!")
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
 
-    rounds_count = 3
-
-    for _ in range(rounds_count):
-        number = random.randint(1, 100)
+    for _ in range(ROUNDS_COUNT):
+        number = random.randint(MIN_NUMBER, MAX_NUMBER)
         correct_answer = "yes" if is_prime(number) else "no"
 
         print(f"Question: {number}")

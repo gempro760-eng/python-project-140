@@ -3,6 +3,10 @@ import random
 
 import prompt
 
+ROUNDS_COUNT = 3
+MIN_NUMBER = 1
+MAX_NUMBER = 100
+
 
 def play_gcd():
     print("Welcome to the Brain Games!")
@@ -10,11 +14,9 @@ def play_gcd():
     print(f"Hello, {name}!")
     print("Find the greatest common divisor of given numbers.")
 
-    rounds_count = 3
-
-    for _ in range(rounds_count):
-        num1 = random.randint(1, 100)
-        num2 = random.randint(1, 100)
+    for _ in range(ROUNDS_COUNT):
+        num1 = random.randint(MIN_NUMBER, MAX_NUMBER)
+        num2 = random.randint(MIN_NUMBER, MAX_NUMBER)
 
         correct_answer = str(math.gcd(num1, num2))
 

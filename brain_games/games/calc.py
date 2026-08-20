@@ -2,6 +2,11 @@ import random
 
 import prompt
 
+ROUNDS_COUNT = 3
+MIN_NUMBER = 1
+MAX_NUMBER = 25
+OPERATIONS = ["+", "-", "*"]
+
 
 def calculate(num1, num2, operation):
     if operation == "+":
@@ -18,13 +23,10 @@ def play_calc():
     print(f"Hello, {name}!")
     print("What is the result of the expression?")
 
-    rounds_count = 3
-    operations = ["+", "-", "*"]
-
-    for _ in range(rounds_count):
-        num1 = random.randint(1, 25)
-        num2 = random.randint(1, 25)
-        operation = random.choice(operations)
+    for _ in range(ROUNDS_COUNT):
+        num1 = random.randint(MIN_NUMBER, MAX_NUMBER)
+        num2 = random.randint(MIN_NUMBER, MAX_NUMBER)
+        operation = random.choice(OPERATIONS)
 
         correct_answer = str(calculate(num1, num2, operation))
 

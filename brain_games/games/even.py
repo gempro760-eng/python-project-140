@@ -2,9 +2,14 @@ import random
 
 import prompt
 
+ROUNDS_COUNT = 3
+MIN_NUMBER = 1
+MAX_NUMBER = 100
+EVEN_DIVISOR = 2
+
 
 def is_even(number):
-    return number % 2 == 0
+    return number % EVEN_DIVISOR == 0
 
 
 def play_even():
@@ -13,10 +18,8 @@ def play_even():
     print(f"Hello, {name}!")
     print('Answer "yes" if the number is even, otherwise answer "no".')
 
-    rounds_count = 3
-
-    for _ in range(rounds_count):
-        number = random.randint(1, 100)
+    for _ in range(ROUNDS_COUNT):
+        number = random.randint(MIN_NUMBER, MAX_NUMBER)
         correct_answer = "yes" if is_even(number) else "no"
 
         print(f"Question: {number}")

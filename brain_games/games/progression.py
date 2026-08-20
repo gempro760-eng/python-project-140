@@ -2,6 +2,16 @@ import random
 
 import prompt
 
+ROUNDS_COUNT = 3
+START_MIN = 1
+START_MAX = 20
+STEP_MIN = 1
+STEP_MAX = 10
+LENGTH_MIN = 5
+LENGTH_MAX = 10
+FIRST_INDEX = 0
+INDEX_OFFSET = 1
+
 
 def generate_progression(start, step, length):
     return [start + i * step for i in range(length)]
@@ -13,15 +23,13 @@ def play_progression():
     print(f"Hello, {name}!")
     print("What number is missing in the progression?")
 
-    rounds_count = 3
-
-    for _ in range(rounds_count):
-        start = random.randint(1, 20)
-        step = random.randint(1, 10)
-        length = random.randint(5, 10)
+    for _ in range(ROUNDS_COUNT):
+        start = random.randint(START_MIN, START_MAX)
+        step = random.randint(STEP_MIN, STEP_MAX)
+        length = random.randint(LENGTH_MIN, LENGTH_MAX)
 
         progression = generate_progression(start, step, length)
-        hidden_index = random.randint(0, length - 1)
+        hidden_index = random.randint(FIRST_INDEX, length - INDEX_OFFSET)
 
         correct_answer = str(progression[hidden_index])
 
